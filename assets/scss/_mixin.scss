@@ -1,0 +1,53 @@
+
+
+$main01_c: #5fc1c7;
+$main02_c: #5FC798;
+$main03_c: #fdce38;
+$main04_c: #FB94BF;
+$main05_c: #3EAFFE;
+
+$error_c:#E60026;
+
+
+
+$main01_c_bold:#00BDC7;
+$main01_c_light:#7AF8FF;
+$main02_c_bold:#1acb7b;
+$main02_c_light:#79c8a4;
+
+$touchDeviceSize:1080px; //スマホ用
+$middleDeviceSize:1500px;
+
+@mixin gothic() {
+    font-family:
+        'Noto Sans JP',
+        "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    ;
+}
+
+@mixin mincho() {
+    font-family: 'Shippori Mincho B1', "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro", "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
+}
+
+@mixin pcDevice($break-point:$touchDeviceSize) {
+    @media screen and (min-width: $break-point) {
+        @content;
+    }
+}
+
+@mixin touchDevice($break-point:$touchDeviceSize) {
+    @media screen and (max-width: $break-point) {
+        @content;
+    }
+}
+
+@mixin middleDevice($break-point:$middleDeviceSize) {
+    @media screen and (max-width: $break-point) {
+        @content;
+    }
+}

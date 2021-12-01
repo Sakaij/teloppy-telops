@@ -1,0 +1,48 @@
+@import "~assets/scss/mixin";
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+
+.full-container {
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.catch {
+    font-size: 200px;
+    text-align: center;
+
+    &_main {
+        position: relative;
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        &_part {
+          @include mincho();
+            position: relative;
+            transition: opacity 1s, filter 0.5s;
+            display: inline-block;
+            opacity: 0;
+            filter: blur(10px);
+            
+
+            &--visible {
+                opacity: 1;
+                transform: none;
+                filter: blur(0);
+            }
+        }
+    }
+}
+

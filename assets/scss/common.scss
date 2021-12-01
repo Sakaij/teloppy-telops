@@ -1,0 +1,324 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho+B1:wght@400;700&display=swap');
+@import "mixin";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1.6;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+
+/*end reset.css*/
+
+html {
+    height: -webkit-fill-available;
+}
+
+
+html,
+body,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+input {
+	@include gothic();
+}
+
+body {
+    background-color: #ffffff;
+}
+
+#guide {
+    z-index: 10;
+    border-radius: 2px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 20px;
+    text-align: center;
+	&.is-hidden{
+		a{
+			opacity: 0;
+			transform: translateY(-15px);
+		}
+	}
+	a{
+		transform: translateY(0);
+		transition: all 0.3s;
+		padding: 10px 100px;
+		display: inline-block;
+		background: url(../img/arrow.png) no-repeat right 20px center;
+		max-width: 98%;
+		text-align: center;
+		font-size: 18px;
+		font-weight: bold;
+		border-radius: 50px;
+		color: #ffffff;
+		transition: all 0.3s;
+		cursor: pointer;
+		box-sizing: border-box;
+		text-decoration: none;
+		background-color: rgba(68, 68, 68, .5);
+		&:hover{
+			background-color: #5fc1c7;
+
+		}
+	}
+}
+
+@include touchDevice(){
+	#guide{
+		top: 10px;
+	  a{
+		font-size: 14px;
+		display: block;
+		padding: 10px 0;
+	  }
+	}
+  }
+
+
+#fix-logo{
+	position: fixed;
+	z-index: 11;
+	left: 20px;
+	top: 20px;
+	background: url(../img/logo.png) no-repeat;
+	background-size: 100% auto;
+	width: 231px;
+	height: 48px;
+	opacity: 0.2;
+	text-indent: -9999px;
+	&.is-black{
+		background-image: url(../img/logo-black.png);
+	}
+	a {
+	  display: block;
+	  width: 100%;
+	  height: 100%;
+	}
+}
+@include touchDevice() {
+	#fix-logo {
+	  top: 10px;
+	  left: 10px;
+	  width: 154px;
+	  height: 32px;
+	}
+  }

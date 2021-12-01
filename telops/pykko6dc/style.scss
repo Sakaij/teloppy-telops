@@ -1,0 +1,66 @@
+@import "~assets/scss/mixin";
+
+.full-container {
+  position: relative;
+  background-color: #000000;
+  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.catch {
+  text-align: center;
+  &_main {
+    position: relative;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    &_part {
+      @include mincho;
+      position: relative;
+      font-size: 55vw;
+      font-size: min(100vw,90vh);
+      position: absolute;
+      opacity: 0;
+      color: #ffffff;
+
+      &--visible {
+        opacity: 1;
+      }
+    }
+  }
+  &_sub {
+    @include mincho;
+    opacity: 0;
+    color: #ffffff;
+    position: relative;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    //transform: scale(10);
+    &--fade {
+      transition: opacity 0.3s, transform 0.6s cubic-bezier(0, 1, 0, 1);
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+}

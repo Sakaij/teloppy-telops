@@ -1,0 +1,96 @@
+@import "~assets/scss/mixin";
+
+.full-container {
+    background: linear-gradient(to left, #00b2fa, #0546c2);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+
+    &::after {
+        position: absolute;
+        background: url(img/windows.png) no-repeat;
+        width: 512px;
+        height: 512px;
+        content: "";
+        display: block;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        opacity: 0.8;
+        right: 15%;
+    }
+}
+
+.pad {
+    box-shadow: 0 0 10px #333;
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.8);
+    max-width: 94%;
+    max-height: 90%;
+    background: url(img/close.png) no-repeat top 15px right 15px;
+    background-color: #ffffff;
+
+    &_header {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    &_footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: url(img/ok.png) no-repeat center right 20px;
+        background-color: #eee;
+    }
+
+    &_body {
+        &_content {
+            padding: 0 5px;
+            position: relative;
+            padding: 30px 10px 30px 65px;
+            background: url(img/error-icon.png) no-repeat center left 25px;
+            font-size: 14px;
+        }
+    }
+
+    &--visible {
+        transition: all 0.3s;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include touchDevice() {
+    .full-container {
+        background: linear-gradient(to left, #00b2fa, #0546c2);
+        position: relative;
+
+        &::after {
+            background-size: 100% auto;
+            width: 216px;
+            height: 216px;
+            right: -50px;
+        }
+    }
+
+    .catch {
+        &_part {
+            &--visible {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ export default function fontsizeAdjust($target: Element, $textElements: NodeList
         $textElements.forEach((e) => {
             e.setAttribute(
                 "style",
-                "width:min(" + Math.floor(fontSize) + "px,90vh)"
+                "max-width:min(" + Math.floor(fontSize) + "px,90vh)"
             );
         });
     }

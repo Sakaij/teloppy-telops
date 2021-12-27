@@ -37,8 +37,6 @@ export default abstract class TelopBase {
 		window.addEventListener('DOMContentLoaded', () => {
 			this._displayLogo();
 		})
-
-
 	}
 	/**DOM読み込みかつAPI接続が終わった時点で呼び出される */
 	protected abstract ready(): any;

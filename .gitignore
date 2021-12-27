@@ -8,6 +8,7 @@ yarn-error.log*
 .dev/
 dist/
 node_modules/
+coverage/
 .env_development
 .env_production
 .env_staging

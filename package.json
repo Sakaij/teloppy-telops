@@ -4,11 +4,15 @@
     "private": true,
     "dependencies": {
         "@types/axios": "^0.14.0",
+        "@types/jquery": "^3.5.9",
         "aws-sdk": "^2.1035.0",
         "axios": "^0.24.0",
+        "jquery": "^3.6.0",
+        "jquery.ripples": "^0.6.3",
         "mime-type": "^4.0.0"
     },
     "devDependencies": {
+        "@types/jest": "^27.0.3",
         "child_process": "^1.0.2",
         "commander": "^8.3.0",
         "copy-webpack-plugin": "^9.1.0",
@@ -21,14 +25,18 @@
         "ejs": "^3.1.6",
         "ejs-compiled-loader": "^3.1.0",
         "file-loader": "^6.2.0",
+        "flush-promises": "^1.0.2",
         "glob": "^7.2.0",
         "html-loader": "^3.0.1",
         "html-webpack-plugin": "^5.5.0",
+        "jest": "^27.4.5",
+        "jest-css-modules": "^2.1.0",
         "mini-css-extract-plugin": "^2.4.5",
         "rimraf": "^3.0.2",
         "sass": "^1.43.4",
         "sass-loader": "^12.3.0",
         "style-loader": "^3.3.1",
+        "ts-jest": "^27.1.2",
         "ts-loader": "^9.2.6",
         "typescript": "^4.5.2",
         "url-loader": "^4.1.1",
@@ -49,7 +57,9 @@
         "deploy-staging-all": "npm run distcleanup && node deploy/buildAll --env staging && node deploy/distDeploy --env staging",
         "deploy-production-all": "npm run distcleanup && node deploy/buildAll --env production && node deploy/distDeploy --env production",
         "postdeploy-staging": "node deploy/distDeploy --env staging",
-        "postdeploy-production": "node deploy/distDeploy --env production"
+        "postdeploy-production": "node deploy/distDeploy --env production",
+        "test": "jest",
+        "test-watch": "jest --watch"
     },
     "license": "ISC"
 }

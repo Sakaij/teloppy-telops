@@ -17,7 +17,7 @@ class App extends TelopBase {
 		$padBody.innerHTML =this.decryptedMessage;
 		$pad.classList.add("pad--visible");
 		await timer(2500);
-		this.displayGuide();
+		this.finish();
 	}
 }
 

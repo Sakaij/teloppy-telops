@@ -26,7 +26,6 @@ class App extends TelopBase {
 			$catchMain.appendChild($mainSpan);
 			$catchSub.appendChild($subSpan);
 		});
-		console.log($catchSub.clientWidth);
 		fontsizeAdjust($catchSub, $catchSub.querySelectorAll('span'), true);
 		const partsArray = Array.from($catchMain.querySelectorAll('span'));
 		await partsArray.reduce(async (p: Promise<void>, e: Element, i: number) => {
@@ -40,7 +39,7 @@ class App extends TelopBase {
 		await timer(500);
 		$catchSub.classList.add("catch_sub--fade");
 		await timer(2000);
-		this.displayGuide();
+		this.finish();
 
 	}
 }

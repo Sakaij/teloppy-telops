@@ -41,9 +41,18 @@ export default abstract class TelopBase {
 	/**DOM読み込みかつAPI接続が終わった時点で呼び出される */
 	protected abstract ready(): any;
 
-	/**テロップアニメーションが終わり次第、呼び出すことでトップページへのガイドを表示させる(自身が、インラインフレームで呼び出されていれば何もしない)*/
-	protected displayGuide(): void {
-		if (this._isWindowIframe) return;
+
+	/** テロップアニメーションが終わった後に必要な処理を行う	*/
+	protected finish():void{
+		window.dispatchEvent(new Event('finish'));
+		if(!this._isWindowIframe){//インラインフレームでなければ、ガイドを表示させる
+			this._displayGuide();
+		}
+	}
+
+	/**テロップアニメーションが終わり次第、呼び出すことでトップページへのガイドを表示させる*/
+	protected _displayGuide(): void {
+		window.dispatchEvent(new Event('animationComplete'));
 		const $guide = document.createElement('p');
 		$guide.setAttribute('id', 'guide');
 		$guide.className = 'is-hidden';

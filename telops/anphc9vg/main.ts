@@ -39,7 +39,7 @@ class App extends TelopBase {
 		}, timer(500));
 		$catchSub.classList.add("catch_sub--fade");
 		await timer(2500);
-		this.displayGuide();
+		this.finish();
 	}
 }
 new App({ telopId: "anphc9vg", isLogoBlack: true }).init();

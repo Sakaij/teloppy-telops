@@ -31,7 +31,7 @@ class App extends TelopBase {
 			return p;
 		}, timer(500));
 		await timer(2000);
-		this.displayGuide();
+		this.finish();
 
 	}
 }

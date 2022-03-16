@@ -2,78 +2,86 @@
 @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
 
 .full-container {
-  background-color: #000;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  max-height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
 }
 
 .catch {
-  font-size: 200px;
-  text-align: center;
-
-  &_main {
-    position: relative;
-    position: absolute;
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
+    font-size: 200px;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-	&_part {
-	  position: relative;
-	  font-family: "New Tegomin", "Shippori Mincho B1", "Times New Roman",
-		"游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro",
-		"HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
-	  color: #940303;
-	  transition: opacity 1s, filter 0.5s;
-	  display: inline-block;
-	  opacity: 0;
-	  filter: blur(50px);
-	  vertical-align: top;
-	  &--visible {
-		opacity: 1;
-		transform: none;
-		filter: blur(0);
-		animation: shaking 3s infinite;
-	  }
-	}
-  }
+
+    &_main {
+        position: relative;
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        &_part {
+            position: relative;
+            font-family: "New Tegomin", "Shippori Mincho B1", "Times New Roman",
+                "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro",
+                "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
+            color: #940303;
+            transition: opacity 1.5s, filter 1s;
+            display: inline-block;
+            opacity: 0;
+            filter: blur(50px);
+            vertical-align: top;
+
+            &--visible {
+                opacity: 1;
+                transform: none;
+                filter: blur(0);
+                animation: shaking 3s infinite;
+            }
+        }
+    }
 }
 
 @keyframes shaking {
-  0% {
-    transform: translate(0px, 0px) rotateZ(0deg);
-  }
-  25% {
-    transform: translate(2px, 2px) rotateZ(2deg);
-  }
-  50% {
-    transform: translate(0px, 2px) rotateZ(0deg);
-  }
-  75% {
-    transform: translate(2px, 0px) rotateZ(-2deg);
-  }
-  100% {
-    transform: translate(0px, 0px) rotateZ(0deg);
-  }
-}
-@include touchDevice() {
-  .catch {
-    font-size: 200px;
-    text-align: center;
-    &_part {
-      &--visible {
-        filter: blur(0);
-        opacity: 1;
-      }
+    0% {
+        transform: translate(0px, 0px) rotateZ(0deg);
     }
-  }
+
+    25% {
+        transform: translate(2px, 2px) rotateZ(2deg);
+    }
+
+    50% {
+        transform: translate(0px, 2px) rotateZ(0deg);
+    }
+
+    75% {
+        transform: translate(2px, 0px) rotateZ(-2deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotateZ(0deg);
+    }
+}
+
+@include touchDevice() {
+    .catch {
+        font-size: 200px;
+        text-align: center;
+
+        &_part {
+            &--visible {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+    }
 }

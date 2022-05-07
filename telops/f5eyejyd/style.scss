@@ -19,7 +19,7 @@
         text-align: center;
         display: flex;
         align-items: center;
-        
+
         margin: auto;
         left: 0;
         right: 0;
@@ -29,15 +29,14 @@
         justify-content: space-between;
 
         &_part {
-            transition: opacity 0.3s,transform 0.3s ease-in-out;
+            transition: opacity 0.5s ease-in-out;
             opacity: 0;
             display: inline-block;
             font-family: 'Yuji Boku', serif;
-            transform: scale(1.5);
             color: #222;
+
             &--visible {
                 opacity: 1;
-                transform:none;
 
             }
         }
@@ -51,46 +50,44 @@
 
 @include touchDevice() {
     .full-container {
-        background-size: 80% auto,auto;
-        
+        background-size: 80% auto, auto;
+
     }
-    
-.pad {
 
-    &_body {
-        position: absolute;
-        width:50%;
-        height: 100%;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        
-        margin: auto;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 0;
-        bottom: 40px;
-        justify-content: space-between;
+    .pad {
 
-        &_part {
-            transition: opacity 0.3s,transform 0.3s ease-in-out;
-            opacity: 0;
-            display: inline-block;
-            font-family: 'Yuji Boku', serif;
-            transform: scale(1.5);
-            color: #222;
-            &--visible {
-                opacity: 1;
-                transform:none;
+        &_body {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
 
+            margin: auto;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 40px;
+            justify-content: space-between;
+
+            &_part {
+                transition: opacity 0.3s ease-in-out;
+                opacity: 0;
+                display: inline-block;
+                font-family: 'Yuji Boku', serif;
+                color: #222;
+
+                &--visible {
+                    opacity: 1;
+                }
             }
         }
-    }
 
-    &--visible {
-        opacity: 1;
-        transform: none;
+        &--visible {
+            opacity: 1;
+            transform: none;
+        }
     }
-}
 }

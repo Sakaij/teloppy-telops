@@ -6,6 +6,9 @@
 # node_modulesのインストール
 $ npm install
 
+# 指定したテロップをローカルで立ち上げる
+$ npm run dev -- --env id=[テロップのフォルダ名]
+
 # 指定したテロップフォルダをステージング用にビルドする
 $ npm run build-staging -- --env id=[テロップのフォルダ名]
 

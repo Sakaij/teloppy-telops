@@ -63,7 +63,6 @@
     transform: scale(0.8);
     max-width: 94%;
     max-height: 90%;
-    transition: all 0.3s;
 
     &_header {
         background: url(img/part2.png) no-repeat center right 10px;
@@ -112,6 +111,7 @@
     }
 
     &--visible {
+        transition: all 0.3s;
         opacity: 1;
         transform: none;
     }

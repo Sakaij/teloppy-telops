@@ -29,6 +29,7 @@ class App extends TelopBase {
 		await timer(1500);
 		partsArray.forEach((e: Element) => e.classList.remove("catch_main_part--blink"));
 		partsArray.forEach((e: Element) => e.classList.add("catch_main_part--active"));
+		await timer(3000);
 		this.finish();
 	}
 }

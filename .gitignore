@@ -13,3 +13,5 @@ coverage/
 .env_production
 .env_staging
 .env_deployment
+
+telops/sample/*

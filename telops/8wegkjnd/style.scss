@@ -1,0 +1,167 @@
+@import "~assets/scss/mixin";
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap");
+
+
+.full-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+    background: url(./img/bg.png);
+    background-size: 1000px auto;
+    background-color: #EBE3D8;
+    &::after{
+        opacity: 0;
+        background-color: #EBE3D8;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.catch {
+    text-align: center;
+
+    &_main {
+
+        position: relative;
+        position: absolute;
+        z-index: 1;
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+
+        &_part {
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            color: #000;
+            width: 9.1%;
+            height: 0;
+            padding-top: 9.1%;
+            font-size: 75px;
+            transition: transform 1s;
+            position: relative;
+            &_front,
+            &_back {
+                font-family: "M PLUS Rounded 1c", 'Noto Sans JP',
+                    "Helvetica Neue",
+                    Arial,
+                    "Hiragino Kaku Gothic ProN",
+                    "Hiragino Sans",
+                    Meiryo,
+                    sans-serif;
+                ;
+                position: absolute;
+                width: 100%;
+                box-shadow: 0 2px 3px #444;
+                height: 100%;
+                top: 0;
+                border-radius: 3px;
+                left: 0;
+                backface-visibility: hidden;
+                transition: transform 1s;
+            }
+
+            &_front {
+                background-color: #ffffff;
+                line-height: 2;
+                transform: rotateY(180deg);
+                font-weight: bold;
+            }
+
+            &_back {
+                transform: rotateY(0deg);
+            }
+
+            &:nth-child(n+11){
+                margin-top: 15px;
+            }
+
+            &:nth-child(6n-5) {
+                color: #EE0011;
+
+                .catch_main_part_back {
+                    background-color: #EE0011;
+                }
+            }
+
+            &:nth-child(6n-4) {
+                color: #00AAEE;
+
+                .catch_main_part_back {
+                    background-color: #00AAEE;
+                }
+            }
+
+            &:nth-child(6n-3) {
+                color: #FFEE55;
+
+                .catch_main_part_back {
+                    background-color: #FFEE55;
+                }
+            }
+
+            &:nth-child(6n-2) {
+                color: #FFBBDD;
+
+                .catch_main_part_back {
+                    background-color: #FFBBDD;
+                }
+            }
+
+            &:nth-child(6n-1) {
+                color: #88CC11;
+
+                .catch_main_part_back {
+                    background-color: #88CC11;
+                }
+            }
+            &:nth-child(6n) {
+                color: #FF9900;
+                .catch_main_part_back {
+                    background-color: #FF9900;
+                }
+            }
+
+            &--visible {
+                transform: rotateY(0);
+
+                .catch_main_part_front {
+                    transform: rotateY(0deg);
+                }
+
+                .catch_main_part_back {
+                    transform: rotateY(-180deg);
+                }
+
+            }
+
+        }
+    }
+}
+
+@include touchDevice() {
+    .catch {
+
+        text-align: center;
+
+        &_main {
+
+            width: 90%;
+        }
+    }
+}
+
+;

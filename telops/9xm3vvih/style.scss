@@ -1,0 +1,71 @@
+@import "~assets/scss/mixin";
+
+
+
+.full-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+background-color: #ffe920;
+    background-size: cover;
+    background: linear-gradient(to left,#4568DC ,#B06AB3 );
+
+}
+
+.catch {
+
+    text-align: center;
+
+    &_main {
+    
+        position: absolute;
+        z-index: 1;
+        width: 70%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        position: relative;
+        color: transparent;
+        svg{
+            line-height: 1;
+            width: 100%;
+            height: auto;
+            fill:transparent;
+            height: 100%;
+            stroke: #fff;
+            text-anchor: start;
+            transition: stroke-dashoffset 1.5s ease , stroke-dasharray 1.5s ease ,fill 0.5s 1s;
+            stroke-dashoffset: 0;
+            stroke-dasharray: 0 120px;
+            stroke-width: 3px;
+            position: absolute;
+            left:0;
+            top: 0;
+        }
+        &--visible{
+            svg{
+                stroke-dashoffset: 0;
+                stroke-dasharray:120px 0px; 
+                fill: #ffffff;
+                
+            }
+        }
+        text{
+        }
+    }
+}
+
+@include touchDevice() {
+    .catch {
+        &_main {
+            width: 90%;
+            svg{
+                stroke-width: 1px;
+            }
+        }
+    }
+}
+
+;

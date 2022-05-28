@@ -34,4 +34,4 @@ class App extends TelopBase {
 	}
 }
 
-new App({ telopId: "fxrc44hu" }).init();
+new App({ telopId: "v2day2cu" }).init();

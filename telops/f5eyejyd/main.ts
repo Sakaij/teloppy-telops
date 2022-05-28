@@ -38,4 +38,4 @@ class App extends TelopBase {
 	}
 }
 
-new App({telopId:"hhsditth",isLogoBlack:true}).init();
+new App({telopId:"f5eyejyd",isLogoBlack:true}).init();

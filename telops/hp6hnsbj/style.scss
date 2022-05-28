@@ -1,0 +1,90 @@
+@import "~assets/scss/mixin";
+
+
+
+.full-container {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+
+    background-size: cover;
+
+}
+
+.catch {
+
+    text-align: center;
+
+    &_circle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        pointer-events: none;
+        background: #000;
+        background: radial-gradient(
+          50px 50px
+          at 
+          center,
+          transparent, 
+          transparent 150px,
+          #000 300px
+        );
+        transition: background-color 0.3s,opacity 0.5s;
+    }
+
+    &_main {
+
+        position: relative;
+        position: absolute;
+        z-index: 1;
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        color:#000;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        &_part {
+
+            position: relative;
+            display: inline-block;
+
+
+
+        }
+    }
+}
+
+@include touchDevice() {
+    .catch {
+
+        text-align: center;
+
+        &_main {
+
+            width: 90%;
+            
+        }
+        &_circle{
+            background: radial-gradient(
+                20px 20px
+                at 
+                center,
+                transparent, 
+                transparent 50px,
+                #000 100px
+              );
+        }
+    }
+}
+
+;

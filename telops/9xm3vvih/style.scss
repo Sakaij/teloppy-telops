@@ -7,9 +7,9 @@
     overflow: hidden;
     height: 100vh;
     max-height: 100vh;
-background-color: #ffe920;
+    background-color: #ffe920;
     background-size: cover;
-    background: linear-gradient(to left,#4568DC ,#B06AB3 );
+    background: linear-gradient(to left, #4568DC, #B06AB3);
 
 }
 
@@ -18,7 +18,7 @@ background-color: #ffe920;
     text-align: center;
 
     &_main {
-    
+
         position: absolute;
         z-index: 1;
         width: 70%;
@@ -28,32 +28,36 @@ background-color: #ffe920;
         right: 0;
         position: relative;
         color: transparent;
-        svg{
+
+        svg {
             line-height: 1;
             width: 100%;
             height: auto;
-            fill:transparent;
+            fill: transparent;
             height: 100%;
+            color: transparent;
             stroke: #fff;
             text-anchor: start;
-            transition: stroke-dashoffset 1.5s ease , stroke-dasharray 1.5s ease ,fill 0.5s 1s;
             stroke-dashoffset: 0;
             stroke-dasharray: 0 120px;
             stroke-width: 3px;
             position: absolute;
-            left:0;
+            left: 0;
             top: 0;
         }
-        &--visible{
-            svg{
+
+        &--visible {
+            svg {
+                transition: stroke-dashoffset 1.5s ease, stroke-dasharray 1.5s ease, fill 0.5s 1.5s, stroke-width 0.3s 1.5s;
                 stroke-dashoffset: 0;
-                stroke-dasharray:120px 0px; 
+                stroke-dasharray: 120px 0px;
                 fill: #ffffff;
-                
+                stroke-width: 0;
+
             }
         }
-        text{
-        }
+
+        text {}
     }
 }
 
@@ -61,8 +65,15 @@ background-color: #ffe920;
     .catch {
         &_main {
             width: 90%;
-            svg{
+
+            svg {
                 stroke-width: 1px;
+            }
+
+            &--visible {
+                svg {
+                    stroke-width: 0;
+                }
             }
         }
     }

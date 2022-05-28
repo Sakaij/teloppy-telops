@@ -48,7 +48,7 @@
 
         &--visible {
             svg {
-                transition: stroke-dashoffset 1.5s ease, stroke-dasharray 1.5s ease, fill 0.5s 1.5s, stroke-width 0.3s 1.5s;
+                transition: stroke-dashoffset 1.5s ease, stroke-dasharray 1.5s ease, fill 1s 1.5s, stroke-width 0.3s 1.5s;
                 stroke-dashoffset: 0;
                 stroke-dasharray: 120px 0px;
                 fill: #ffffff;

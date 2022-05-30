@@ -1,0 +1,127 @@
+@import "~assets/scss/mixin";
+
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+
+
+.full-container {
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+    background: url(./img/bg.jpg) ;
+    background-size: cover;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.8;
+        display: block;
+        z-index: 0;
+    }
+
+}
+@keyframes light{
+    0%{
+        filter: drop-shadow(none) ;
+    }
+    100%{
+
+    }
+  }
+@keyframes rotate{
+    0%{
+        transform:rotateX(80deg) rotateZ(0); 
+    }
+    100%{
+        transform:rotateX(80deg) rotateZ(360deg); 
+    }
+  }
+.catch {
+    z-index: 1;
+    text-align: center;
+
+    &_circle {
+        position: absolute;
+        z-index: 1;
+        top: calc(50% + 300px);
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+        
+        img{
+            z-index: 1;
+            transform:rotateX(80deg) rotateZ(120deg); 
+        
+            width: 0;
+            height: auto;
+            transform-origin: center;
+            transition:width 1s,filter 1s ease-in-out;
+        }
+        &--open{
+            img{
+                width:80%;
+                animation :rotate 5s infinite linear;
+            }
+        }
+        &--lit{
+            img{
+                filter:drop-shadow(0 -16px 25px #fff) drop-shadow(0 -16px 10px #fff);
+            }
+        }
+
+    }
+
+
+    &_main {
+        font-family: 'Yuji Mai','Shippori Mincho B1', "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro", "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
+        position: absolute;
+        font-weight: bold;
+        line-height: 1;
+        z-index: 2;
+        width: 40%;
+        left: 0;
+        right: 0;
+        top:calc(50% + 200px - var(--catchFontSize ) / 2);
+        margin: 0 auto;
+        color:#fff;
+        opacity: 0;
+        text-align: center;
+        text-shadow: 0 0 10px #FFE8FF,0 0 15px #FFE8FF,0 0 20px #FFE8FF,0 0 25px #FFE8FF,0 0 30px #FFE8FF,0 0 35px #FFE8FF,0 0 10px #FFE8FF,0 0 15px #FFE8FF,0 0 20px #FFE8FF,0 0 25px #FFE8FF,0 0 30px #FFE8FF,0 0 35px #FFE8FF;
+        &--visible{
+            text-shadow: 0 0 10px #f5aaf5,0 0 15px #f5aaf5;
+            transition: top 2.5s,opacity 0.5s,text-shadow 2s 0.4s;
+            opacity: 1;
+            top:calc(50% - var(--catchFontSize ) / 2);
+        }
+    }
+}
+
+@include touchDevice() {
+    .catch {
+        &_circle {
+            top: calc(50% + 100px);
+            &--open{
+                img{
+                    width:100%;    
+                }
+            }
+
+        }
+    
+    
+        &_main {
+            width: 50%;
+            top:calc(50% + 50px - var(--catchFontSize ) / 2);
+            &--visible{
+                top:calc(50% - var(--catchFontSize ) / 2);
+            }
+        }
+    }
+    
+}
+
+;

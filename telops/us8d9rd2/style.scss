@@ -59,10 +59,10 @@
             width: 0;
             height: auto;
             transform-origin: center;
-            transition:width 1s,filter 1s ease-in-out;
         }
         &--open{
             img{
+                transition:width 1s,filter 1s ease-in-out;
                 width:80%;
                 animation :rotate 5s infinite linear;
             }

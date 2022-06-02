@@ -41,4 +41,4 @@ class App extends TelopBase {
 	}
 }
 
-new App({ telopId: "us8d9rd2", isLogoBlack: true }).init();
+new App({ telopId: "us8d9rd2", isLogoBlack: false }).init();

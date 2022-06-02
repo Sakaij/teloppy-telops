@@ -34,6 +34,7 @@
                 "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro",
                 "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
             color: #940303;
+            text-shadow: 0 0 3px #940303, 0 0 5px #940303, 0 0 8px #940303;
             transition: opacity 1.5s, filter 1s;
             display: inline-block;
             opacity: 0;
@@ -44,7 +45,7 @@
                 opacity: 1;
                 transform: none;
                 filter: blur(0);
-                animation: shaking 3s infinite;
+                animation: shaking 0.5s infinite linear;
             }
         }
     }
@@ -52,23 +53,23 @@
 
 @keyframes shaking {
     0% {
-        transform: translate(0px, 0px) rotateZ(0deg);
+        transform: translate(0px, 0px);
     }
 
     25% {
-        transform: translate(2px, 2px) rotateZ(2deg);
+        transform: translate(1px, 1px) ;
     }
 
     50% {
-        transform: translate(0px, 2px) rotateZ(0deg);
+        transform: translate(0px, 1px);
     }
 
     75% {
-        transform: translate(2px, 0px) rotateZ(-2deg);
+        transform: translate(1px, 0px) ;
     }
 
     100% {
-        transform: translate(0px, 0px) rotateZ(0deg);
+        transform: translate(0px, 0px);
     }
 }
 
@@ -78,6 +79,7 @@
         text-align: center;
 
         &_part {
+            text-shadow: 0 0 3px #940303, 0 0 5px #940303;
             &--visible {
                 filter: blur(0);
                 opacity: 1;

@@ -12,9 +12,10 @@ class App extends TelopBase {
 	async ready() {
 		const container = document.querySelector<HTMLElement>('.full-height');
 		if (container) fullHeight(container);
-		const $catchMain = document.querySelector(".catch_main"),
-			$catchSub = document.querySelector<HTMLElement>('.catch_sub');
-		if (!$catchMain || !$catchSub) return;
+		const $catchMain = document.querySelector(".catch_main");
+			//$catchSub = document.querySelector<HTMLElement>('.catch_sub');
+		//if (!$catchMain || !$catchSub) return;
+		if (!$catchMain) return;
 		const messageArray = messageSplit(this.decryptedMessage);
 		messageArray.forEach((v) => {
 			const $mainSpan = document.createElement('span'),
@@ -24,21 +25,21 @@ class App extends TelopBase {
 			$mainSpan.className = 'catch_main_part'
 			$subSpan.className = 'catch_sub_part'
 			$catchMain.appendChild($mainSpan);
-			$catchSub.appendChild($subSpan);
+			//$catchSub.appendChild($subSpan);
 		});
-		fontsizeAdjust($catchSub, $catchSub.querySelectorAll('span'), true);
+		//fontsizeAdjust($catchSub, $catchSub.querySelectorAll('span'), true);
 		const partsArray = Array.from($catchMain.querySelectorAll('span'));
 		await partsArray.reduce(async (p: Promise<void>, e: Element, i: number) => {
 			await p;
 			e.classList.add("catch_main_part--visible");
-			await timer(200);
+			await timer(75);
 			e.classList.remove("catch_main_part--visible");
 			await timer(10);
 			return p;
 		}, timer(500));
-		await timer(500);
-		$catchSub.classList.add("catch_sub--fade");
-		await timer(2000);
+		// await timer(500);
+		// $catchSub.classList.add("catch_sub--fade");
+		await timer(1500);
 		this.finish();
 
 	}

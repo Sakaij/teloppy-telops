@@ -16,6 +16,7 @@
     <script src="https://www.googletagmanager.com/gtag/js?id=G-XSDBF18QPW" async=""></script>
     <script>
         (function() {
+            
             if (window.location.host != "teloppy.com") return;
             if (window != window.parent) return;
             window.dataLayer = window.dataLayer || [];
@@ -23,7 +24,7 @@
             gtag('js', new Date());
             gtag('config', 'G-XSDBF18QPW', {
                 page_path: window.location.pathname,
-                page_title:"telopページ"
+                page_title:"telopページ:"+window.location.pathname.replace('/telops/',"").replace("/","")
             });
         })();
     </script>

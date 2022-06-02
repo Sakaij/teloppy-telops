@@ -7,7 +7,7 @@
  * @param $textElements 
  * @param setWidth	widthもセットするかどうか 
  */
-export default function fontsizeAdjust($target: Element, $textElements: NodeListOf<Element>,setWidth:boolean=false): void {
+export default function fontsizeAdjust($target: Element, $textElements: NodeListOf<Element>,setWidth:boolean=false): number {
     const fontSize = $textElements.length == 0 ? 16 : $target.clientWidth / $textElements.length - 1;
     
     $target.setAttribute(
@@ -22,6 +22,7 @@ export default function fontsizeAdjust($target: Element, $textElements: NodeList
             );
         });
     }
+    return Math.floor(fontSize);
 }
 
 

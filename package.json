@@ -4,12 +4,17 @@
     "private": true,
     "dependencies": {
         "@types/axios": "^0.14.0",
+        "@types/gsap": "^3.0.0",
         "@types/jquery": "^3.5.9",
+        "@types/three": "^0.141.0",
         "aws-sdk": "^2.1035.0",
         "axios": "^0.24.0",
+        "gsap": "^3.10.4",
         "jquery": "^3.6.0",
         "jquery.ripples": "^0.6.3",
-        "mime-type": "^4.0.0"
+        "mime-type": "^4.0.0",
+        "three": "^0.141.0",
+        "typefaces": "^0.0.1"
     },
     "devDependencies": {
         "@types/jest": "^27.0.3",

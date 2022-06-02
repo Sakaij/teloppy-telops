@@ -1,0 +1,157 @@
+@import "~assets/scss/mixin";
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.full-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+    background: url(./img/bg.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+#bg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.catch {
+    font-size: 200px;
+    text-align: center;
+
+    &_main {
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+
+        &_part {
+            flex: 1 1 auto;
+            position: relative;
+            top: calc(50% + 150px);
+            transition: opacity 1s;
+            display: inline-block;
+            font-weight: bold;
+            max-width: 200px;
+            font-size: 80px;
+            color: #fff;
+            text-shadow: 0 0 1px #333;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Hachi Maru Pop', cursive;
+            transition: top 7s ease;
+
+            &_char {
+                position: absolute;
+                top: 2%;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            &--visible {
+                animation: move 3s infinite ease-in-out;
+                top: 0;
+                animation-delay: 5s !important;
+            }
+
+            &:nth-child(7n-6) {
+                background-image: url(./img/baloon1.png);
+            }
+
+            &:nth-child(7n-5) {
+                background-image: url(./img/baloon2.png);
+                animation-delay: 0.4s;
+
+            }
+
+            &:nth-child(7n-4) {
+                background-image: url(./img/baloon3.png);
+
+            }
+
+            &:nth-child(7n-3) {
+                background-image: url(./img/baloon4.png);
+                animation-delay: 0.4s;
+            }
+
+            &:nth-child(7n-2) {
+                background-image: url(./img/baloon5.png);
+
+            }
+
+            &:nth-child(7n-1) {
+                background-image: url(./img/baloon6.png);
+                animation-delay: 0.4s;
+
+            }
+
+            &:nth-child(7n) {
+                background-image: url(./img/baloon7.png);
+            }
+        }
+    }
+}
+
+@include touchDevice() {
+    .catch {
+        &_main {
+
+            &_part {
+                min-width: 30px;
+
+                &--visible {
+
+                    animation-name: move2;
+                }
+            }
+        }
+    }
+
+
+}
+
+;

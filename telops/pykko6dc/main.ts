@@ -32,14 +32,14 @@ class App extends TelopBase {
 		await partsArray.reduce(async (p: Promise<void>, e: Element, i: number) => {
 			await p;
 			e.classList.add("catch_main_part--visible");
-			await timer(75);
+			await timer(90);
 			e.classList.remove("catch_main_part--visible");
-			await timer(10);
+			await timer(20);
 			return p;
 		}, timer(500));
 		// await timer(500);
 		// $catchSub.classList.add("catch_sub--fade");
-		await timer(1500);
+		await timer(700);
 		this.finish();
 
 	}

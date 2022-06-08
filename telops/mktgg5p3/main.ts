@@ -16,8 +16,9 @@ class App extends TelopBase {
 		if (!$catchMain) return;
 		$catchMain.innerHTML = this.decryptedMessage;
 		$catchMain.style.fontSize = $catchMain.clientHeight / 1.5 + 'px';
-		document.documentElement.style.setProperty('--animationDuration',(this.decryptedMessage.length*750)/1000 +"s" );
-		await timer(this.decryptedMessage.length*750+500);
+		const duration =(this.decryptedMessage.length * 400 + 3000);
+		document.documentElement.style.setProperty('--animationDuration', duration/1000+ "s");
+		await timer(duration+500);
 		this.finish();
 	}
 }

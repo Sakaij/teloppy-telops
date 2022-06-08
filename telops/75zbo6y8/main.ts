@@ -27,9 +27,8 @@ class App extends TelopBase {
 		}
 
 		const maxText = document.documentElement.clientWidth > 1010 ? 1100 : 700;
-		await textAppend(200);
-		await textAppend(100);
-		await textAppend(50);
+		await textAppend(150);
+		await textAppend(75);
 		await textAppend(50);
 		await textAppend(50);
 		await textAppend(50);
@@ -39,7 +38,7 @@ class App extends TelopBase {
 				break;
 			}
 			await textAppend(0);
-			await timer(10);
+			await timer(5);
 		}
 
 		await timer(500);
@@ -49,7 +48,7 @@ class App extends TelopBase {
 		$padBody.classList.add("pad_body--face");
 
 
-		await timer(2500);
+		await timer(2000);
 		this.finish();
 	}
 }

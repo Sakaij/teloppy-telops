@@ -12,7 +12,7 @@ class App extends TelopBase {
 	async ready() {
 		const container = document.querySelector<HTMLElement>('.full-height');
 		if (container) fullHeight(container);
-		const $catchMain = document.querySelector(".catch_main");
+		const $catchMain = document.querySelector<HTMLElement>(".catch_main");
 		if (!$catchMain) return;
 		const messageArray = messageSplit(this.decryptedMessage);
 		messageArray.forEach((v) => {
@@ -36,6 +36,7 @@ class App extends TelopBase {
 		});
 		//スマホ時に文字が多いと小さすぎになるので、最低30にしておいてそれよりも小さい場合はスクロールアニメーションをかける
 		if($parts[0].clientWidth == 30 && document.documentElement.clientWidth < 1080){
+			$catchMain.style.justifyContent = "flex-start";
 			const scrollX = this.decryptedMessage.length * 30 + 100;
 			$catchMain.animate(
 				[{
@@ -56,7 +57,7 @@ class App extends TelopBase {
 			e.classList.add("catch_main_part--visible");
 			await timer(500);
 			return p;
-		}, timer(500));
+		}, timer(200));
 		await timer(7000);
 		this.finish();
 	}

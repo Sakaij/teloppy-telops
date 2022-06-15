@@ -44,7 +44,7 @@ module.exports = (env, options) => {
                     use: 'ejs-compiled-loader',
                 },
                 {
-                    test: /\.(jpg|png|gif|ttf|otf|woff|woff2|mp4)$/,
+                    test: /\.(jpg|png|gif|ttf|otf|woff|woff2|mp4|json)$/,
                     type: "asset/inline"
                 }
             ],

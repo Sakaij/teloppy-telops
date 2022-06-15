@@ -1,0 +1,81 @@
+@import "~assets/scss/mixin";
+
+.full-container {
+
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+    background: url(./img/grass.jpg);
+    background-size:320px auto;
+}
+
+.catch {
+    font-size: 200px;
+    text-align: center;
+
+    &_main {
+        position: relative;
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        &_part {
+
+            color: transparent;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+
+            &--main {
+                background: url(./img/grass.jpg);
+                background-size: 160px auto;
+                background-clip: text;
+                -webkit-background-clip: text;
+            }
+
+            &--shadow {
+                &.is-visible {
+                    transition: text-shadow 1s ;
+                    text-shadow: 0 5px 5px #0D3400;
+                }
+            }
+
+
+        }
+    }
+}
+#fix-logo{
+    opacity: 0.5 !important;
+}
+@include touchDevice() {
+
+    .full-container {
+        background-size: 160px auto;
+    }
+
+    .catch {
+        &_main {
+            &_part {
+                &--main {
+                    background-size: 160px auto;
+                }
+                &--shadow {
+                    &.is-visible {
+                        text-shadow: 0 3px 3px #0D3400;
+                    }
+                }
+
+            }
+        }
+    }
+};

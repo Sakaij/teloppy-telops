@@ -3,7 +3,7 @@ import './style.scss';
 import fullHeight from 'plugins/fullHeight';
 import messageSplit from 'plugins/messageSplit';
 import TelopBase from 'utils/telopBase';
-import fontsizeAdjust from 'plugins/fontsizeAdjust';
+import {fontsizeAdjustHorizontal} from 'plugins/fontsizeAdjust';
 
 
 const timer = (time: number) => new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -22,7 +22,7 @@ class App extends TelopBase {
 			$span.className = 'pad_body_part'
 			$padBody.appendChild($span);
 		});
-		fontsizeAdjust($padBody, $padBody.querySelectorAll('span'), true);
+		fontsizeAdjustHorizontal($padBody, $padBody.querySelectorAll('span'), true);
 
 		const partsArray = Array.from($padBody.querySelectorAll('.pad_body_part'));
 		await timer(500);

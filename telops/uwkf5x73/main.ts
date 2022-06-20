@@ -1,7 +1,7 @@
 
 import './style.scss';
 import fullHeight from 'plugins/fullHeight';
-import fontsizeAdjust from 'plugins/fontsizeAdjust';
+import {fontsizeAdjustHorizontal} from 'plugins/fontsizeAdjust';
 import messageSplit from 'plugins/messageSplit';
 import TelopBase from 'utils/telopBase';
 

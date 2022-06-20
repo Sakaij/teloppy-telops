@@ -1,7 +1,7 @@
 
 import './style.scss';
 import fullHeight from 'plugins/fullHeight';
-import fontsizeAdjust from 'plugins/fontsizeAdjust';
+import {fontsizeAdjustHorizontal} from 'plugins/fontsizeAdjust';
 import messageSplit from 'plugins/messageSplit';
 import TelopBase from 'utils/telopBase';
 
@@ -23,7 +23,7 @@ class App extends TelopBase {
 		});
 		const $parts = $catchMain.querySelectorAll<HTMLElement>('.catch_main_part');
 		const partsArray = Array.from($parts);
-		fontsizeAdjust($catchMain, $parts, true);
+		fontsizeAdjustHorizontal($catchMain, $parts, true);
 		$parts.forEach((e:HTMLElement,i:number)=>e.style.zIndex=($parts.length - i).toString());
 		await timer(500);
 		await partsArray.reduce(async (p: Promise<void>, e: Element, i: number) => {

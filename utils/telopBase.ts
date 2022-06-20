@@ -56,7 +56,7 @@ export default abstract class TelopBase {
 		const $guide = document.createElement('p');
 		$guide.setAttribute('id', 'guide');
 		$guide.className = 'is-hidden';
-		$guide.innerHTML = `<a href="https://teloppy.com/?reference_telopid=${this._telopId}">Teloppyでリッチなメッセージを送ろう!</a>`
+		$guide.innerHTML = `<a href="https://teloppy.com/?reference_telopid=${this._telopId}">Teloppyでメッセージ動画を作ろう!</a>`
 		document.body.prepend($guide);
 		setTimeout(() => $guide.className = "" , 50);
 	}

@@ -1,7 +1,7 @@
 
 import './style.scss';
 import fullHeight from 'plugins/fullHeight';
-import fontsizeAdjust from 'plugins/fontsizeAdjust';
+import {fontsizeAdjustHorizontal} from 'plugins/fontsizeAdjust';
 import messageSplit from 'plugins/messageSplit';
 import TelopBase from 'utils/telopBase';
 
@@ -24,7 +24,7 @@ class App extends TelopBase {
 		});
 		const $parts = $catchMain.querySelectorAll('.catch_main_part');
 		const partsArray = Array.from($parts);
-		const fontSize = fontsizeAdjust($catchMain, $parts, true);
+		const fontSize = fontsizeAdjustHorizontal($catchMain, $parts, true);
 		document.documentElement.style.setProperty('--catchFontSize',fontSize+"px" );
 		document.documentElement.style.setProperty('--circleHeight',$catchCircle.clientHeight+"px" );
 		const $circle = document.querySelector<HTMLElement>('.catch_circle');

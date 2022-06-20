@@ -1,7 +1,7 @@
 
 import './style.scss';
 import fullHeight from 'plugins/fullHeight';
-import fontsizeAdjust from 'plugins/fontsizeAdjust';
+import {fontsizeAdjustHorizontal} from 'plugins/fontsizeAdjust';
 import messageSplit from 'plugins/messageSplit';
 import TelopBase from 'utils/telopBase';
 
@@ -27,7 +27,7 @@ class App extends TelopBase {
 			$catchMain.appendChild($mainSpan);
 			//$catchSub.appendChild($subSpan);
 		});
-		//fontsizeAdjust($catchSub, $catchSub.querySelectorAll('span'), true);
+		//fontsizeAdjustHorizontal($catchSub, $catchSub.querySelectorAll('span'), true);
 		const partsArray = Array.from($catchMain.querySelectorAll('span'));
 		await partsArray.reduce(async (p: Promise<void>, e: Element, i: number) => {
 			await p;
